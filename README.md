@@ -10,13 +10,13 @@
 
 此外，在PyTorch版本中，我们设计了4个不同的参数和模型文件以适合不同的任务的任务需求，且拥有不同的参数大小。
 
-|  类型  |    平台    |  参数量  | 模型大小 | 测试集准确率 |   链接   |
-| :----: | :--------: | :------: | :------: | :----------: | :------: |
-| 原模型 | Tensorflow | 11038622 |   44MB   |    0.894     | [下载]() |
-|   XL   |  PyTorch   | 3754934  |   15MB   |    0.903     | [下载]() |
-|   L    |  PyTorch   | 1910684  |  7.6MB   |    0.891     | [下载]() |
-|   M    |  PyTorch   |  416212  |  1.7MB   |    0.877     | 仓库内含 |
-|   S    |  PyTorch   |  117366  |  469KB   |    0.853     | 仓库内含 |
+|  类型  |    平台    |  参数量  | 模型大小 | 测试集准确率 |                             链接                             |
+| :----: | :--------: | :------: | :------: | :----------: | :----------------------------------------------------------: |
+| 原模型 | Tensorflow | 11038622 |   44MB   |    0.894     | [下载](https://pan.baidu.com/s/1ekZin3XVA0OntkX4RbWIJw?pwd=5qkl ) |
+|   XL   |  PyTorch   | 3754934  |   15MB   |    0.903     | [下载](https://pan.baidu.com/s/1ekZin3XVA0OntkX4RbWIJw?pwd=5qkl ) |
+|   L    |  PyTorch   | 1910684  |  7.6MB   |    0.891     | [下载](https://pan.baidu.com/s/1ekZin3XVA0OntkX4RbWIJw?pwd=5qkl ) |
+|   M    |  PyTorch   |  416212  |  1.7MB   |    0.877     |                           仓库内含                           |
+|   S    |  PyTorch   |  117366  |  469KB   |    0.853     |                           仓库内含                           |
 
 ## 快速使用
 
@@ -27,3 +27,4 @@
 本模型使用[ChnSentiCorp](https://www.sciencedirect.com/science/article/abs/pii/S0957417407001534)数据集进行训练和测试，通过[jieba](https://github.com/fxsjy/jieba)进行分词后将句子按照词数拓展或裁剪到指定长度。通过词向量嵌入后通过并行的多个CNN卷积层，获得不同的感受野。最后通过全连接层进行结果的输出。
 
 ![TextCNN](figure/model.svg)
+
