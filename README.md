@@ -20,16 +20,16 @@
 
 我们对此进行了相关的消融实验，消融结果如下所示：
 
-| Model                                  | Accuracy |
-| :------------------------------------- | :------: |
-| Embed+TextCNN                          |  0.9656  |
-| Bert+TextCNN                           |  0.9821  |
-| Bert+BiLSTM                            |  0.9789  |
-| Bert+TransformerCNN                    |  0.9798  |
-| Bert+TextCNN+Att                       |  0.9833  |
-| Bert+BiLSTM+Att                        |  0.9831  |
-| Bert+TextCNN+BiLSTM+Att                |  0.9835  |
-| Bert+TextCNN+BiLSTM+TransformerCNN+Att |  0.9835  |
+| Model                                  | Accuracy |                             Link                             |
+| :------------------------------------- | :------: | :----------------------------------------------------------: |
+| Embed+TextCNN                          |  0.9656  |                                                              |
+| Bert+TextCNN                           |  0.9821  |                                                              |
+| Bert+BiLSTM                            |  0.9789  |                                                              |
+| Bert+TransformerCNN                    |  0.9798  |                                                              |
+| Bert+TextCNN+Att                       |  0.9833  |                                                              |
+| Bert+BiLSTM+Att                        |  0.9831  |                                                              |
+| Bert+TextCNN+BiLSTM+Att                |  0.9835  |                                                              |
+| Bert+TextCNN+BiLSTM+TransformerCNN+Att |  0.9835  | [Download](https://pan.baidu.com/s/1dlkkuZHrtELjy3-19J4N5Q?pwd=t4v0) |
 
 其中，我们使用的Bert模型是[google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)，其具有强大的中文文本特征提取能力。在模型融合部分，均为我们自己编写实现的代码，我们通过在模型维度上进行结果的拼接，最后通过MutliHeadSelfAttention层以及全连接层进行结果的输出。
 
