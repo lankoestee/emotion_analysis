@@ -1,6 +1,47 @@
-# TextCNN情感分析实验
+# 基于微博评论的情感分析实验
 
-![Huawei](https://img.shields.io/badge/Huawei-%23FF0000.svg?style=for-the-badge&logo=huawei&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+
+## 期末实现部分（2024.07.14）
+
+## 更新部分
+
+```shell
+.
+├── dataset
+├── model
+├── train.py
+├── val.py
+```
+
+## 实现功能
+
+通过PyTorch框架实现了基于Bert-TextCNN-BiLSTM-TransformerCNN-Attention的多模型并联融合情感分析任务。数据集基于微博评论数据集weibo-senti-100k，通过数据预处理、模型训练、模型融合等步骤，实现了对微博评论的情感分析任务。
+
+我们对此进行了相关的消融实验，消融结果如下所示：
+
+| Model                                  | Accuracy |
+| :------------------------------------- | :------: |
+| Embed+TextCNN                          |  0.9656  |
+| Bert+TextCNN                           |  0.9821  |
+| Bert+BiLSTM                            |  0.9789  |
+| Bert+TransformerCNN                    |  0.9798  |
+| Bert+TextCNN+Att                       |  0.9833  |
+| Bert+BiLSTM+Att                        |  0.9831  |
+| Bert+TextCNN+BiLSTM+Att                |  0.9835  |
+| Bert+TextCNN+BiLSTM+TransformerCNN+Att |  0.9835  |
+
+其中，我们使用的Bert模型是[google-bert/bert-base-chinese](https://huggingface.co/google-bert/bert-base-chinese)，其具有强大的中文文本特征提取能力。在模型融合部分，均为我们自己编写实现的代码，我们通过在模型维度上进行结果的拼接，最后通过MutliHeadSelfAttention层以及全连接层进行结果的输出。
+
+## 快速使用
+
+通过`train.py`进行模型的训练，通过`val.py`进行模型的验证。`model`文件夹中包含了我们自己搭建的相关模型，由于模型较大，故未上传至仓库中。
+
+## 模型概览
+
+![](figure/model.png)
+
+## 期中实现部分（2024.04.29）
 
 本仓库是基于华为有限公司基座课程[《自然语言处理》——情感分析](https://connect.huaweicloud.com/courses/learn/course-v1:HuaweiX+CBUCNXA028+Self-paced/about)的Tensorflow以及PyTorch实现版本。
 
